@@ -13,8 +13,12 @@ public class RecursiveMethods {
 	 */
 	public static double geometricSum(int n) {
 		
-			// FIXME compute the geometric sum for the first n terms recursively
+		if (n == 0)
 			return 0;
+			else
+				return Math.pow(.5, n) + geometricSum(n-1);
+		//whats the smallest n can be? then otherwise, how can you calculate the geo sum recursively for each term? 
+			
 		
 	}
 
@@ -28,11 +32,17 @@ public class RecursiveMethods {
 	 */
 	public static int gcd(int p, int q) {
 		
-			// FIXME compute the gcd of p and q using recursion
-			return 0;
+		if ( q == 0)
+			return p;
+			else return gcd(q, p%q);
 		
 	}
-
+//p/q
+	//if q is zero, the gcd is p
+	//else find the remainder of of p/q and see if that has a gcd with q
+	//ex if p = 12 and q = 8, then gcd(8,4) then gcd(4,0), now youve hit the base case
+	//this is a theorem in math! gcd(p,q) = gcd(q, r),
+	// where r is always p&q and eventually gcd(p,q) = gcd(r,0) = r
 	
 
 	/**
